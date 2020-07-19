@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String KEY_ITEM_POSITION = "item_position";
     public static final int EDIT_TEXT_CODE = 20;
 
-    ArrayList items;
+    List<String> items;
 
     Button btAdd;
     EditText etItem;
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(MainActivity.this, EditActivity.class);
 
-                i.putExtra(KEY_ITEM_TEXT, position);
+                i.putExtra(KEY_ITEM_TEXT, items.get(position));
                 i.putExtra(KEY_ITEM_POSITION, position);
 
                 startActivityForResult(i, EDIT_TEXT_CODE);
